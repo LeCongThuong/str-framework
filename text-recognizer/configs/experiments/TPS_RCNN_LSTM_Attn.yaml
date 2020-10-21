@@ -1,5 +1,5 @@
-global:
-  exp_name:   # where to store logs and models
+general:
+  exp_name: ''  # where to store logs and models
   train_data: # path to training dataset
   valid_data: # path to validation dataset
   manualSeed:  1111 # for random seed setting
@@ -16,6 +16,7 @@ global:
   eps:   1e-8  # eps for Adadelta. default=1e-8
   grad_clip:  5 # gradient clipping value. default=5
   baiduCTC:  False  # for data_filtering_off mode
+  output_dir: './output/' # dir that contains output of training such as models, optimizer
 data:
   select_data:  'MJ-ST' # select training data (default is MJ-ST, which means MJ and ST used as training data)
   batch_ratio:  '0.5-0.5' # assign ratio for each selected data in the batch
@@ -29,9 +30,9 @@ data:
   PAD:  False # whether to keep ratio then pad for image resize
   data_filtering_off:  False # for data_filtering_off mode
 arch:
-  Transformation:  ;TPS' # Transformation stage. None|TPS
-  FeatureExtraction:  'RCNN' # FeatureExtraction stage. VGG|RCNN|ResNet
-  SequenceModeling:  'BiLSTM' # SequenceModeling stage. None|BiLSTM
+  Transformation: 'TPS' # Transformation stage. None|TPS
+  FeatureExtraction: 'RCNN' # FeatureExtraction stage. VGG|RCNN|ResNet
+  SequenceModeling: 'BiLSTM' # SequenceModeling stage. None|BiLSTM
   Prediction:  'Attn' # Prediction stage. CTC|Attn
   num_fiducial:  20  # number of fiducial points of TPS-STN
   input_channel:  1  #  the number of input channel of Feature extractor
