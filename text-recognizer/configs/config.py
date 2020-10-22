@@ -9,16 +9,8 @@ import yaml
 import argparse
 import os
 from easydict import EasyDict
-from utils.logger import initial_logger
+from logger import initial_logger
 from utils.setup import setup_gpu_and_random
-import random
-
-import torch
-import torch.backends.cudnn as cudnn
-import torch.nn.init as init
-import torch.optim as optim
-import torch.utils.data
-import numpy as np
 
 
 def get_args():
@@ -82,5 +74,4 @@ def setup_config():
 
 if __name__ == '__main__':
     setup_config()
-
 
