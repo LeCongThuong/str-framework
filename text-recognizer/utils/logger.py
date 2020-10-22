@@ -5,9 +5,9 @@ from __future__ import print_function
 import logging
 
 
-def initial_logger():
+def initial_logger(log_file_path):
     FORMAT = '%(asctime)s-%(levelname)s: %(message)s'
-    logging.basicConfig(level=logging.INFO, format=FORMAT)
+    logging.basicConfig(filename=log_file_path, level=logging.INFO, format=FORMAT)
     logger = logging.getLogger(__name__)
     return logger
 
