@@ -9,7 +9,7 @@ import yaml
 import argparse
 import os
 from easydict import EasyDict
-from logger import initial_logger
+from utils.logger import configure_logger
 from utils.setup import setup_gpu_and_random
 
 
@@ -68,8 +68,9 @@ def setup_config():
     args = get_args()
     config = process_config(args.config)
     setup_gpu_and_random(config)
-    logger = initial_logger(config.log_file)
-    logger.info("Config: " + str(dict(config)))
+    # logger = configure_logger('Config', config.log_file)
+    # logger.info("Config: " + str(dict(config)) + '\n')
+    return config
 
 
 if __name__ == '__main__':

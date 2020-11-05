@@ -16,7 +16,7 @@ general:
   eps:   1e-8  # eps for Adadelta. default=1e-8
   grad_clip:  5 # gradient clipping value. default=5
   baiduCTC:  False  # for data_filtering_off mode
-  output_dir: './output/' # dir that contains output of training such as models, optimizer
+  output_dir: 'outputs' # dir that contains outputs of training such as models, optimizer
 data:
   select_data:  'MJ-ST' # select training data (default is MJ-ST, which means MJ and ST used as training data)
   batch_ratio:  '0.5-0.5' # assign ratio for each selected data in the batch
@@ -36,5 +36,5 @@ arch:
   Prediction:  'Attn' # Prediction stage. CTC|Attn
   num_fiducial:  20  # number of fiducial points of TPS-STN
   input_channel:  1  #  the number of input channel of Feature extractor
-  output_channel: 512  #  the number of output channel of Feature extractor
+  output_channel: 512  #  the number of outputs channel of Feature extractor
   hidden_size:  256  #  the size of the LSTM hidden state
